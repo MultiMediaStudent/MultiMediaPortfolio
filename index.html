@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Portfolio | Home</title>
+    <style>
+        /* Base Reset & Colors */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e3f2fd; /* Light pastel blue base */
+            color: #ffffff; /* White text for content cards */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0d47a1; /* Darker blue accent */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .navbar li a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .navbar li a:hover, .navbar li a.active {
+            background-color: #1565c0; /* Slightly lighter accent for hover/active state */
+        }
+
+        /* Header Banner / Slideshow Container */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 350px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .slideshow {
+            display: flex;
+            width: 500%; /* 5 images = 500% width */
+            height: 100%;
+            animation: slide 20s infinite ease-in-out;
+        }
+        .slideshow img {
+            width: 20%; /* Each image takes 1/5th of the container */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animation for the banner slideshow */
+        @keyframes slide {
+            0%, 15% { transform: translateX(0); }
+            20%, 35% { transform: translateX(-20%); }
+            40%, 55% { transform: translateX(-40%); }
+            60%, 75% { transform: translateX(-60%); }
+            80%, 95% { transform: translateX(-80%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Main Page Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+        .profile-card {
+            background-color: #1976d2; /* Darker blue content card */
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .profile-img-container {
+            flex-shrink: 0;
+        }
+        .profile-img-container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+        }
+        .profile-text {
+            flex-grow: 1;
+        }
+        .profile-text h1 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 5px;
+        }
+        .profile-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .profile-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner-container {
+                height: 200px;
+            }
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="photoshop.html">Photoshop</a></li>
+            <li><a href="illustrator.html">Illustrator</a></li>
+            <li><a href="premiere.html">Premiere Pro Videos</a></li>
+            <li><a href="animation.html">Animation</a></li>
+            <li><a href="final.html">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Banner Slideshow -->
+    <header class="banner-container">
+        <div class="slideshow">
+            <img src="VT.png" alt="VT Project">
+            <img src="WWW.png" alt="WWW Project">
+            <img src="Farm.png" alt="Farm Project">
+            <img src="Eagle.jpg" alt="Eagle Project">
+            <img src="HC.png" alt="HC Project">
+        </div>
+    </header>
+
+    <!-- Page Layout Content -->
+    <main class="container">
+        <section class="profile-card">
+            
+            <!-- Left Side: Profile Image -->
+            <div class="profile-img-container">
+                <img src="Wander.png" alt="Profile Image">
+            </div>
+            
+            <!-- Right Side: Text Paragraphs -->
+            <div class="profile-text">
+                <h1>Welcome to My Multimedia Portfolio</h1>
+                
+                <!-- Paragraph 1: Purpose of the portfolio -->
+                <p>
+                     Welcome to my portfolio! The purpose of this website is to showcase the digital media skills and creative projects I have developed throughout my Multimedia class. Here, you can find a few pieces of my work that include: graphic design, video editing, and animation.
+                </p>
+                
+                <!-- Paragraph 2: Current skills and goals -->
+                <p>
+                    Currently, I have developed skills in image manipulation, warping, and Photoshop. As I progress through this class, I plan to expand my knowledge of animation, advanced video production techniques, and interactive storytelling to further build my digital media skillset.
+                </p>
+            </div>
+            
+        </section>
+    </main>
+
+</body>
+</html>
