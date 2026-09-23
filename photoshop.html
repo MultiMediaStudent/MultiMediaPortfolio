@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Portfolio | Photoshop</title>
+    <style>
+        /* Base Reset & Colors */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e3f2fd; /* Light pastel blue base */
+            color: #ffffff; /* White text for content cards */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0d47a1; /* Darker blue accent */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .navbar li a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .navbar li a:hover, .navbar li a.active {
+            background-color: #1565c0; /* Slightly lighter accent for hover/active state */
+        }
+
+        /* Header Banner / Slideshow Container */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 350px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .slideshow {
+            display: flex;
+            width: 500%; /* 5 images = 500% width */
+            height: 100%;
+            animation: slide 20s infinite ease-in-out;
+        }
+        .slideshow img {
+            width: 20%; /* Each image takes 1/5th of the container */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animation for the banner slideshow */
+        @keyframes slide {
+            0%, 15% { transform: translateX(0); }
+            20%, 35% { transform: translateX(-20%); }
+            40%, 55% { transform: translateX(-40%); }
+            60%, 75% { transform: translateX(-60%); }
+            80%, 95% { transform: translateX(-80%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Main Page Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Updated Section Card Style for Portfolio Page */
+        .portfolio-card {
+            background-color: #1976d2; /* Darker blue content card */
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-card h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 5px;
+        }
+
+        /* Image Gallery Grid for Photoshop Items */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .gallery-item {
+            background-color: #0d47a1;
+            border: 2px solid #ffffff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item p {
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 8px;
+            font-weight: 600;
+        }
+
+        /* Dedicated Text Space */
+        .description-space {
+            background-color: #1565c0;
+            padding: 20px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            border-left: 5px solid #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner-container {
+                height: 200px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photoshop.html" class="active">Photoshop</a></li>
+            <li><a href="illustrator.html">Illustrator</a></li>
+            <li><a href="premiere.html">Premiere Pro Videos</a></li>
+            <li><a href="animation.html">Animation</a></li>
+            <li><a href="final.html">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Banner Slideshow (Using Photoshop Files) -->
+    <header class="banner-container">
+        <div class="slideshow">
+            <img src="VT.png" alt="VT Project Banner">
+            <img src="WWW.png" alt="WWW Project Banner">
+            <img src="Farm.png" alt="Farm Project Banner">
+            <img src="DV.png" alt="DV Project Banner">
+            <img src="HC.png" alt="HC Project Banner">
+        </div>
+    </header>
+
+    <!-- Page Layout Content -->
+    <main class="container">
+        <section class="portfolio-card">
+            
+            <h1>My Photoshop Projects</h1>
+            
+            <!-- Photoshop Mini Gallery Display -->
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="VT.png" alt="VT Project">
+                    <p>Sporting Event Project</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="WWW.png" alt="WWW Project">
+                    <p>Wild Wild West Project</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Farm.png" alt="Farm Project">
+                    <p>Animal Farm Project</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="DV.png.png" alt="DV Project">
+                    <p>Darth Vader Project</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="HC.png" alt="HC Project">
+                    <p>HomeComing Project</p>
+                </div>
+            </div>
+            
+            <!-- Custom Paragraph Space -->
+            <div class="description-space">
+                <p>
+                    <!-- Write your custom paragraph inside this tag -->
+                   I learned some new skills to create these projects, such as layers, masks, and filters. All of which, I have learned over the past few weeks in my Multimedia Class's Photoshop Unit.
+                </p>
+            </div>
+            
+        </section>
+    </main>
+
+</body>
+</html>
