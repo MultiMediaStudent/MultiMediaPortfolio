@@ -62,10 +62,10 @@
             height: 100%;
             animation: slide 12s infinite ease-in-out;
         }
-        .slideshow video {
+        .slideshow iframe {
             width: 50%; /* Each video takes 1/2 of the slideshow container */
             height: 100%;
-            object-fit: cover;
+            border: none;
         }
 
         /* Animation for the 2-video banner slideshow */
@@ -112,10 +112,11 @@
             display: flex;
             flex-direction: column;
         }
-        .video-item video {
+        .video-item iframe {
             width: 100%;
             aspect-ratio: 16 / 9;
             background-color: #000000;
+            border: none;
             display: block;
         }
         .video-info {
@@ -166,12 +167,8 @@
     <!-- Header Banner Video Slideshow -->
     <header class="banner-container">
         <div class="slideshow">
-            <video autoplay muted loop playsinline>
-                <source src="ZachKing.mp4" type="video/mp4">
-            </video>
-            <video autoplay muted loop playsinline>
-                <source src="disconnect.mp4" type="video/mp4">
-            </video>
+            <iframe src="https://google.com" allow="autoplay"></iframe>
+            <iframe src="https://google.com" allow="autoplay"></iframe>
         </div>
     </header>
 
@@ -186,10 +183,7 @@
                 
                 <!-- Video 1: Zach King -->
                 <div class="video-item">
-                    <video controls preload="metadata">
-                        <source src="ZachKing.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <iframe src="https://google.com" allow="autoplay" allowfullscreen></iframe>
                     <div class="video-info">
                         <h2>Zach King Magic Edit</h2>
                         <p>Write a short sentence summarizing your Zach King project, such as the masking, jump cuts, or visual effects you used to create the illusion.</p>
@@ -198,10 +192,7 @@
 
                 <!-- Video 2: Disconnect -->
                 <div class="video-item">
-                    <video controls preload="metadata">
-                        <source src="disconnect.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <iframe src="https://google.com" allow="autoplay" allowfullscreen></iframe>
                     <div class="video-info">
                         <h2>Disconnect</h2>
                         <p>Write a short sentence summarizing your Disconnect video, highlighting the pacing, audio editing, or storytelling techniques you applied.</p>
