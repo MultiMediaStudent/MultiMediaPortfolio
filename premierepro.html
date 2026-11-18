@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Portfolio | Premiere Pro</title>
+    <style>
+        /* Base Reset & Colors */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e3f2fd; /* Light pastel blue base */
+            color: #ffffff; /* White text for content cards */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0d47a1; /* Darker blue accent */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .navbar li a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .navbar li a:hover, .navbar li a.active {
+            background-color: #1565c0; /* Slightly lighter accent for hover/active state */
+        }
+
+        /* Header Banner / Video Slideshow Container */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 350px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background-color: #000000;
+        }
+        .slideshow {
+            display: flex;
+            width: 200%; /* 2 videos = 200% width */
+            height: 100%;
+            animation: slide 12s infinite ease-in-out;
+        }
+        .slideshow video {
+            width: 50%; /* Each video takes 1/2 of the slideshow container */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animation for the 2-video banner slideshow */
+        @keyframes slide {
+            0%, 40% { transform: translateX(0); }
+            50%, 90% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Main Page Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Updated Section Card Style for Portfolio Page */
+        .portfolio-card {
+            background-color: #1976d2; /* Darker blue content card */
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-card h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 5px;
+        }
+
+        /* Video Gallery Grid for Premiere Pro Items */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .video-item {
+            background-color: #0d47a1;
+            border: 2px solid #ffffff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        .video-item video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000000;
+            display: block;
+        }
+        .video-info {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        .video-info h2 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #64b5f6;
+            padding-bottom: 4px;
+        }
+        .video-info p {
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner-container {
+                height: 200px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photoshop.html">Photoshop</a></li>
+            <li><a href="illustrator.html">Illustrator</a></li>
+            <li><a href="premiere.html" class="active">Premiere Pro Videos</a></li>
+            <li><a href="animation.html">Animation</a></li>
+            <li><a href="final.html">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Banner Video Slideshow -->
+    <header class="banner-container">
+        <div class="slideshow">
+            <video autoplay muted loop playsinline>
+                <source src="ZachKing.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline>
+                <source src="disconnect.mp4" type="video/mp4">
+            </video>
+        </div>
+    </header>
+
+    <!-- Page Layout Content -->
+    <main class="container">
+        <section class="portfolio-card">
+            
+            <h1>My Premiere Pro Videos</h1>
+            
+            <!-- Premiere Pro Video Display -->
+            <div class="video-grid">
+                
+                <!-- Video 1: Zach King -->
+                <div class="video-item">
+                    <video controls preload="metadata">
+                        <source src="ZachKing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-info">
+                        <h2>Zach King Magic Edit</h2>
+                        <p>Write a short sentence summarizing your Zach King project, such as the masking, jump cuts, or visual effects you used to create the illusion.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2: Disconnect -->
+                <div class="video-item">
+                    <video controls preload="metadata">
+                        <source src="disconnect.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-info">
+                        <h2>Disconnect</h2>
+                        <p>Write a short sentence summarizing your Disconnect video, highlighting the pacing, audio editing, or storytelling techniques you applied.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+    </main>
+
+</body>
+</html>
