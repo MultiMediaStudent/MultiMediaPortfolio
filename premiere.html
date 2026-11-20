@@ -44,7 +44,7 @@
             background-color: #1565c0; /* Slightly lighter accent for hover/active state */
         }
 
-        /* Header Banner / Video Slideshow Container */
+        /* Header Banner / Slideshow Container */
         .banner-container {
             width: 100%;
             max-width: 1200px;
@@ -54,24 +54,26 @@
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            background-color: #000000;
         }
         .slideshow {
             display: flex;
-            width: 200%; /* 2 videos = 200% width */
+            width: 500%; /* 5 images = 500% width */
             height: 100%;
-            animation: slide 12s infinite ease-in-out;
+            animation: slide 20s infinite ease-in-out;
         }
-        .slideshow iframe {
-            width: 50%; /* Each video takes 1/2 of the slideshow container */
+        .slideshow img {
+            width: 20%; /* Each image takes 1/5th of the container */
             height: 100%;
-            border: none;
+            object-fit: cover;
         }
 
-        /* Animation for the 2-video banner slideshow */
+        /* Animation for the banner slideshow */
         @keyframes slide {
-            0%, 40% { transform: translateX(0); }
-            50%, 90% { transform: translateX(-50%); }
+            0%, 15% { transform: translateX(0); }
+            20%, 35% { transform: translateX(-20%); }
+            40%, 55% { transform: translateX(-40%); }
+            60%, 75% { transform: translateX(-60%); }
+            80%, 95% { transform: translateX(-80%); }
             100% { transform: translateX(0); }
         }
 
@@ -91,47 +93,63 @@
         }
         
         .portfolio-card h1 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 2rem;
             border-bottom: 2px solid #e3f2fd;
             padding-bottom: 5px;
         }
 
-        /* Video Gallery Grid for Premiere Pro Items */
+        /* Video Showcase Grid */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 25px;
         }
+
         .video-item {
             background-color: #0d47a1;
             border: 2px solid #ffffff;
-            border-radius: 6px;
-            overflow: hidden;
+            border-radius: 8px;
+            padding: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             display: flex;
             flex-direction: column;
         }
-        .video-item iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
+
+        .video-item h2 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #e3f2fd;
+        }
+
+        /* Responsive 16:9 Aspect Ratio Container for Google Drive Preview */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-bottom: 15px;
             background-color: #000000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
-            display: block;
         }
-        .video-info {
+
+        /* Dedicated 2-Sentence Description Space */
+        .description-space {
+            background-color: #1565c0;
             padding: 15px;
+            border-radius: 6px;
+            font-size: 1rem;
+            border-left: 5px solid #ffffff;
             flex-grow: 1;
-        }
-        .video-info h2 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #64b5f6;
-            padding-bottom: 4px;
-        }
-        .video-info p {
-            font-size: 0.95rem;
-            font-weight: 400;
         }
 
         /* Responsive Design */
@@ -146,6 +164,9 @@
             .navbar li {
                 width: 100%;
                 text-align: center;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -164,11 +185,14 @@
         </ul>
     </nav>
 
-    <!-- Header Banner Video Slideshow -->
+    <!-- Header Banner Slideshow -->
     <header class="banner-container">
         <div class="slideshow">
-            <iframe src="https://google.com" allow="autoplay"></iframe>
-            <iframe src="https://google.com" allow="autoplay"></iframe>
+            <img src="VT.png" alt="VT Project Banner">
+            <img src="WWW.png" alt="WWW Project Banner">
+            <img src="Farm.png" alt="Farm Project Banner">
+            <img src="DV.png" alt="DV Project Banner">
+            <img src="HC.png" alt="HC Project Banner">
         </div>
     </header>
 
@@ -176,26 +200,30 @@
     <main class="container">
         <section class="portfolio-card">
             
-            <h1>My Premiere Pro Videos</h1>
+            <h1>My Premiere Pro Projects</h1>
             
-            <!-- Premiere Pro Video Display -->
+            <!-- Premiere Pro Video Showcase -->
             <div class="video-grid">
                 
-                <!-- Video 1: Zach King -->
+                <!-- Video 1 -->
                 <div class="video-item">
-                    <iframe src="https://google.com" allow="autoplay" allowfullscreen></iframe>
-                    <div class="video-info">
-                        <h2>Zach King Magic Edit</h2>
-                        <p> Using jump cuts and fun transitions, I was able to make it seem as though my costume change was magic. This video was inspired by Zach King's Youtube clips, using magic and jump cuts to convnce the audience that what they are seeing is magic.</p>
+                    <h2>Premiere Pro Project 1</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://google.com" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div class="description-space">
+                        <pUsing jump cuts and fun transitions, I was able to make it seem as though my costume change was magic. This video was inspired by Zach King's Youtube clips, using magic and jump cuts to convnce the audience that what they are seeing is magic.</p>
                     </div>
                 </div>
 
-                <!-- Video 2: Disconnect -->
+                <!-- Video 2 -->
                 <div class="video-item">
-                    <iframe src="https://google.com" allow="autoplay" allowfullscreen></iframe>
-                    <div class="video-info">
-                        <h2>Disconnect</h2>
-                        <p> I focused on intense close-up shots in this film, taking an Alan Watts audio and overlaying a violin to create an somber atmosphere. I used keyframes for the credits and glitch affects to sell the narrative.</p>
+                    <h2>Premiere Pro Project 2</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://google.com" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div class="description-space">
+                        <p>I focused on intense close-up shots in this film, taking an Alan Watts audio and overlaying a violin to create an somber atmosphere. I used keyframes for the credits and glitch affects to sell the narrative.</p>
                     </div>
                 </div>
 
