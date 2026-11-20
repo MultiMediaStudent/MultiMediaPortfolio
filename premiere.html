@@ -44,7 +44,7 @@
             background-color: #1565c0; /* Slightly lighter accent for hover/active state */
         }
 
-        /* Header Banner / Slideshow Container */
+        /* Video Header Banner Container */
         .banner-container {
             width: 100%;
             max-width: 1200px;
@@ -54,27 +54,32 @@
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .slideshow {
+            background-color: #0d47a1;
             display: flex;
-            width: 500%; /* 5 images = 500% width */
-            height: 100%;
-            animation: slide 20s infinite ease-in-out;
+            gap: 4px; /* Clean divider line between the two banner videos */
         }
-        .slideshow img {
-            width: 20%; /* Each image takes 1/5th of the container */
+        .banner-video {
+            flex: 1;
             height: 100%;
-            object-fit: cover;
+            position: relative;
+            background-color: #000000;
         }
-
-        /* Animation for the banner slideshow */
-        @keyframes slide {
-            0%, 15% { transform: translateX(0); }
-            20%, 35% { transform: translateX(-20%); }
-            40%, 55% { transform: translateX(-40%); }
-            60%, 75% { transform: translateX(-60%); }
-            80%, 95% { transform: translateX(-80%); }
-            100% { transform: translateX(0); }
+        .banner-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .banner-label {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background-color: rgba(13, 71, 161, 0.85);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            pointer-events: none; /* Lets clicks pass through to the video player */
         }
 
         /* Main Page Layout */
@@ -84,7 +89,7 @@
             padding: 0 20px;
         }
         
-        /* Updated Section Card Style for Portfolio Page */
+        /* Section Card Style for Portfolio Page */
         .portfolio-card {
             background-color: #1976d2; /* Darker blue content card */
             border-radius: 8px;
@@ -155,7 +160,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .banner-container {
-                height: 200px;
+                height: 440px;
+                flex-direction: column;
             }
             .navbar ul {
                 flex-direction: column;
@@ -185,14 +191,15 @@
         </ul>
     </nav>
 
-    <!-- Header Banner Slideshow -->
+    <!-- Header Video Banner -->
     <header class="banner-container">
-        <div class="slideshow">
-            <img src="VT.png" alt="VT Project Banner">
-            <img src="WWW.png" alt="WWW Project Banner">
-            <img src="Farm.png" alt="Farm Project Banner">
-            <img src="DV.png" alt="DV Project Banner">
-            <img src="HC.png" alt="HC Project Banner">
+        <div class="banner-video">
+            <iframe src="https://google.com" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <span class="banner-label">Featured Clip 1</span>
+        </div>
+        <div class="banner-video">
+            <iframe src="https://google.com" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <span class="banner-label">Featured Clip 2</span>
         </div>
     </header>
 
@@ -212,7 +219,7 @@
                         <iframe src="https://google.com" allow="autoplay; fullscreen" allowfullscreen></iframe>
                     </div>
                     <div class="description-space">
-                        <p></p>Using jump cuts and fun transitions, I was able to make it seem as though my costume change was magic. This video was inspired by Zach King's Youtube clips, using magic and jump cuts to convnce the audience that what they are seeing is magic.</p>
+                        <p>Using jump cuts and fun transitions, I was able to make it seem as though my costume change was magic. This video was inspired by Zach King's YouTube clips, using magic and jump cuts to convince the audience that what they are seeing is magic.</p>
                     </div>
                 </div>
 
@@ -223,7 +230,7 @@
                         <iframe src="https://google.com" allow="autoplay; fullscreen" allowfullscreen></iframe>
                     </div>
                     <div class="description-space">
-                        <p>I focused on intense close-up shots in this film, taking an Alan Watts audio and overlaying a violin to create an somber atmosphere. I used keyframes for the credits and glitch affects to sell the narrative.</p>
+                        <p>I focused on intense close-up shots in this film, taking an Alan Watts audio and overlaying a violin to create a somber atmosphere. I used keyframes for the credits and glitch effects to sell the narrative.</p>
                     </div>
                 </div>
 
